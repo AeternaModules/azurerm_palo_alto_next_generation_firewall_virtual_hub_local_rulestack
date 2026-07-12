@@ -1,3 +1,7 @@
+output "palo_alto_next_generation_firewall_virtual_hub_local_rulestacks_id" {
+  description = "Map of id values across all palo_alto_next_generation_firewall_virtual_hub_local_rulestacks, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks"
+  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks : k => v.id }
+}
 output "palo_alto_next_generation_firewall_virtual_hub_local_rulestacks_destination_nat" {
   description = "Map of destination_nat values across all palo_alto_next_generation_firewall_virtual_hub_local_rulestacks, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks"
   value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks : k => v.destination_nat }
