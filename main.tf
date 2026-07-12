@@ -17,7 +17,7 @@ resource "azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack
   }
 
   dynamic "destination_nat" {
-    for_each = each.value.destination_nat != null ? [each.value.destination_nat] : []
+    for_each = each.value.destination_nat != null ? each.value.destination_nat : []
     content {
       dynamic "backend_config" {
         for_each = destination_nat.value.backend_config != null ? [destination_nat.value.backend_config] : []
