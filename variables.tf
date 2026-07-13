@@ -33,8 +33,8 @@ EOT
     name                 = string
     resource_group_name  = string
     rulestack_id         = string
-    marketplace_offer_id = optional(string) # Default: "pan_swfw_cloud_ngfw"
-    plan_id              = optional(string) # Default: "panw-cloud-ngfw-payg"
+    marketplace_offer_id = optional(string)
+    plan_id              = optional(string)
     tags                 = optional(map(string))
     network_profile = object({
       egress_nat_ip_address_ids    = optional(list(string))
@@ -57,7 +57,7 @@ EOT
     })))
     dns_settings = optional(object({
       dns_servers   = optional(list(string))
-      use_azure_dns = optional(bool) # Default: false
+      use_azure_dns = optional(bool)
     }))
   }))
 }
