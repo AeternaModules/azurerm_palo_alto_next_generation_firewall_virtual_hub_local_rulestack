@@ -8,7 +8,7 @@ output "palo_alto_next_generation_firewall_virtual_hub_local_rulestacks_destinat
 }
 output "palo_alto_next_generation_firewall_virtual_hub_local_rulestacks_dns_settings" {
   description = "Map of dns_settings values across all palo_alto_next_generation_firewall_virtual_hub_local_rulestacks, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks"
-  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks : k => v.dns_settings if v.dns_settings != null && length(v.dns_settings) > 0 }
+  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks : k => one(v.dns_settings) if v.dns_settings != null && length(v.dns_settings) > 0 }
 }
 output "palo_alto_next_generation_firewall_virtual_hub_local_rulestacks_marketplace_offer_id" {
   description = "Map of marketplace_offer_id values across all palo_alto_next_generation_firewall_virtual_hub_local_rulestacks, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks"
@@ -20,7 +20,7 @@ output "palo_alto_next_generation_firewall_virtual_hub_local_rulestacks_name" {
 }
 output "palo_alto_next_generation_firewall_virtual_hub_local_rulestacks_network_profile" {
   description = "Map of network_profile values across all palo_alto_next_generation_firewall_virtual_hub_local_rulestacks, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks"
-  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks : k => v.network_profile if v.network_profile != null && length(v.network_profile) > 0 }
+  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_hub_local_rulestack.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks : k => one(v.network_profile) if v.network_profile != null && length(v.network_profile) > 0 }
 }
 output "palo_alto_next_generation_firewall_virtual_hub_local_rulestacks_plan_id" {
   description = "Map of plan_id values across all palo_alto_next_generation_firewall_virtual_hub_local_rulestacks, keyed the same as var.palo_alto_next_generation_firewall_virtual_hub_local_rulestacks"
